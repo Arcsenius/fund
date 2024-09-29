@@ -1,6 +1,7 @@
 cmake-build-debug/
-*..txt
+*.txt
 *.o
 *.out
 *.exe
 .idea/
+main.c

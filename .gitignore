@@ -1,6 +1,6 @@
 cmake-build-debug/
-*.txt
 *.o
 *.out
 *.exe
 .idea/
+./CMakeLists.txt

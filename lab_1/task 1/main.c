@@ -12,7 +12,7 @@ int HandlerOptA(int);
 int HandlerOptF(int);
 int GetOpts(int argc, char** argv, kOpts*, int*);
 
-int main(int argc, char const *argv[]) {
+int main(const int argc, const char* argv[]) {
     kOpts opt = 0;
     int procceed_number = 0;
     void (*Handlers[6])(int) = {

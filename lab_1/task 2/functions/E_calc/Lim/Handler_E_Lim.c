@@ -10,9 +10,9 @@ int HandlerELim(long double Precision) {
 
     do {
         EPrevious = ECurrent;
-        ECurrent = (long double)powl((1.0 + 1/n), n);
+        ECurrent = (long double)powl((1.0 + 1 / n), n);
         ++n;
-    } while (fabsl(ECurrent-EPrevious) > Precision);
+    } while (fabsl(ECurrent - EPrevious) > Precision);
 
 
     return ECurrent;

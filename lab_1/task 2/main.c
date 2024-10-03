@@ -1,6 +1,9 @@
 #include <math.h>
 #include <stdio.h>
 
+#include "functions/Ln2_calc/Lim/Handler_Ln2_Lim.h"
+#include "functions/Ln2_calc/Quation/Handler_ln2_Quation.h"
+
 
 
 typedef enum {
@@ -85,7 +88,7 @@ int SelectCalculation(COpts* option) {
 
 int main(const int argc, const char* argv[]) {
     long double eps = 1e-10;
-    printf("%Lf\n", HandlerEQuation(eps));
+    printf("%Lf\n", HandlerLn2Quation(eps));
 
     return 0;
 }

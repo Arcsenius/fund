@@ -4,11 +4,11 @@
 
 long double HandlerLn2Series(long double Precision) {
     unsigned int n = 1;
-    long double Sum = 0, Calculation = 0;
+    long double Sum = 0.0, Calculation = 0.0;
 
 
     do {
-        Calculation = pow(-1, n - 1)/n;
+        Calculation = powl(-1.0, n - 1.0)/n;
         Sum += Calculation;
     } while (Calculation > Precision);
 

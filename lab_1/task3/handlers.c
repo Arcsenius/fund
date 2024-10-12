@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "handlers.h"
 
+#include <math.h>
 #include <stdlib.h>
 
 #include "functions.h"
@@ -47,8 +48,8 @@ int HandlerOptQ(const double* args) {
 
 int HandlerOptM(const double* args) {
     const int a = (int)args[0], b = (int)args[1];
-
-    const int result = MultiplicityNums(a, b);
+    const int aabs = fabs((int)args[0]), babs = fabs((int)args[1]);
+    const int result = MultiplicityNums(aabs, babs);
     if (result == -1) {
         printf("Multipliers have zero");
          return EXIT_FAILURE;

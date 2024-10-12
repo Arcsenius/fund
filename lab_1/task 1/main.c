@@ -55,7 +55,7 @@ int GetOpts(int argc, char** argv, kOpts *option, int *number) {
                     break;
                 case 'a':
                     *option = OPT_A;
-                break;
+                    break;
                 case 'f':
                     *option = OPT_F;
                     break;

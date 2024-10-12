@@ -1,0 +1,18 @@
+макрос define - дирректива препроцессова, заменяющая текст
+
+#define va_start(ap, parm) (ap)=(char*)(&(parm)+1)
+#define va_arg(ap, type) ((type*)((char*)(ap)+=sizeof(type)))[-1]
+
+в макроссах надо писать скобки #define sqr(a, b) (a)*(b)
+
+
+Указатель на функцию
+
+double(*pf)(double, int)
+
+ постановка указателя
+ pf = Foo
+ y = pf(0.5, 4)
+
+
+

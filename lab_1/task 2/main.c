@@ -3,7 +3,7 @@
 
 #include "functions/Ln2_calc/Lim/Handler_Ln2_Lim.h"
 #include "functions/Ln2_calc/Quation/Handler_ln2_Quation.h"
-
+#include "functions/Pi_calc/Handler_Pi_Lim.h"
 
 
 typedef enum {
@@ -88,7 +88,7 @@ int SelectCalculation(COpts* option) {
 
 int main(const int argc, const char* argv[]) {
     long double eps = 1e-10;
-    printf("%Lf\n", HandlerLn2Quation(eps));
+    printf("%Lf\n", HandlerPiLim(1e-10));
 
     return 0;
 }

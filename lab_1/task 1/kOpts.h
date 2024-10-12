@@ -8,7 +8,7 @@
 #endif //KOPTS_H
 
 
-typedef enum kOpts {
+typedef enum {
     OPT_H,
     OPT_P,
     OPT_S,

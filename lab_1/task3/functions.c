@@ -1,12 +1,26 @@
 #include "functions.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <tgmath.h>
-#include "errors.h"
 
 
 int SolveQuadratic(double precision, double a, double b, double c, double* root1, double* root2) {
     double discriminant = b * b - 4 * a * c;
-    if (fabs(discriminant) < precision) {
+
+
+    if (fabs(a) <= precision) {
+        return -1;
+    }
+    if (fabs(b) <= precision) {
+        b = 0;
+    }
+    if (fabs(c) <= precision) {
+        c = 0;
+    }
+    if (a == 0 && b == 0 && c == 0) {
+        return -1;
+
+    }    if (fabs(discriminant) < precision) {
         discriminant = 0;
     }
 
@@ -26,16 +40,19 @@ int SolveQuadratic(double precision, double a, double b, double c, double* root1
 
 
 void PrintRootsQuadratic(int numRoots, double* root1, double* root2) {
-    if (!numRoots) {
-        printf("The quadratic equation doesn`t has roots\n");
-        return;
-    } if (numRoots == 1) {
-        printf("The root of the quadratic equation is %lf \n", *root1);
+
+    if (numRoots == -1) {
+        printf("This equation is not quadratic\n\n");
         return;
     }
-    printf("The roots of the quadratic equation are:%lf, %lf\n", *root1, *root2);
-
-    return;
+    if (!numRoots) {
+        printf("The quadratic equation doesn`t have roots\n\n");
+        return;
+    } if (numRoots == 1) {
+        printf("The root of the quadratic equation is %lf \n\n", *root1);
+        return;
+    }
+    printf("The roots of the quadratic equation are:%lf, %lf\n\n", *root1, *root2);
 }
 
 
@@ -54,4 +71,6 @@ int IsSquareTriangle(const double precision, const double a, const double b, con
 
     return fabs(hypotenuse * hypotenuse - sumSquaresLegs) < precision;
 }
+
+
 

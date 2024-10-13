@@ -1,4 +1,3 @@
-#include "functions.h"
 #include "parse_args.h"
 #include "handlers.h"
 
@@ -17,5 +16,7 @@ int main(const int argc, const char** argv) {
     if(!GetOpts(argc, argv, &option, &argsCount, args)) {
         handlersMass[option](args);
     }
+
+
     return 0;
 }

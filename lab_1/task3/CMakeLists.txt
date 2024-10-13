@@ -3,10 +3,10 @@ project(fund_alg_task3 C)
 
 set(CMAKE_C_STANDARD 23)
 
-FILE(GLOB ${sources} "${PROJECT_SOURCE_DIR}/*.h" "${PROJECT_SOURCE_DIR}/*.c")
+FILE(GLOB sources "${PROJECT_SOURCE_DIR}/*.h" "${PROJECT_SOURCE_DIR}/*.c")
 
 
-message("${PROJECT_SOURCE_DIR}/*.c")
+message("${PROJECT_SOURCE_DIR}/*.h")
 
 add_executable(${PROJECT_NAME}
        ${sources}

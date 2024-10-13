@@ -1,8 +1,7 @@
-//
-// Created by Arseniy on 12.10.2024.
-//
 
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
-
-#endif //FUNCTIONS_H
+#define ld long double
+int GetArgs(const int , const char** , double*);
+int SeriesA(ld* precision, ld x);
+#endif

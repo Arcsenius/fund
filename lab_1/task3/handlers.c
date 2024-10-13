@@ -8,11 +8,17 @@
 
 int HandlerOptQ(const double* args) {
     const double precision = args[0];
-    const double a = args[1], b = args[2], c = args[3];
+    double a = args[1], b = args[2], c = args[3];
     double root1, root2;
 
 
-    printf("equation with coeff %lf, %lf, %lf \n", a, b, c);
+    if (precision <= 0.0) {
+        printf("precision don`t positive\n");
+        return EXIT_FAILURE;
+    }
+
+
+    printf("Coefficients %lf, %lf, %lf \n", a, b, c);
     const int result1 = SolveQuadratic(precision, a, b, c, &root1, &root2);
     PrintRootsQuadratic(result1, &root1, &root2);
 
@@ -38,7 +44,7 @@ int HandlerOptQ(const double* args) {
 
 
     printf("equation with coeff %lf, %lf, %lf \n", c, b, a);
-    const int result6 = SolveQuadratic(precision, a, b, c, &root1, &root2);
+    const int result6 = SolveQuadratic(precision, c, b, a, &root1, &root2);
     PrintRootsQuadratic(result6, &root1, &root2);
 
 
@@ -61,9 +67,19 @@ int HandlerOptM(const double* args) {
     return EXIT_SUCCESS;
 }
 
+
 int HandlerOptT(const double* args) {
     const double precision = args[0];
     const double a = args[1], b = args[2], c = args[3];
+
+    if (precision <= 0.0) {
+        printf("precision don`t positive\n");
+        return EXIT_FAILURE;
+    }
+    if (a <= precision || b <= precision || c <= precision) {
+        printf("It`s not triangle\n");
+        return EXIT_FAILURE;
+    }
     if (IsSquareTriangle(precision, a, b, c)) {
         printf("This triangle is rectangular");
         return EXIT_SUCCESS;

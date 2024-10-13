@@ -42,6 +42,7 @@ int GetOpts (const int argc,  char *argv[], KOpts *option,  int *argsCount, doub
             args[i] = atof(argv[i + 2]);
         }
 
+
         return EXIT_SUCCESS;
     }
     printf("Error: name flag starts '-' or '/' \n");

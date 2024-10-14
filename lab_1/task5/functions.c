@@ -66,3 +66,58 @@ void SeriesB(long double precision, long double x) {
     printf("The sum of series B is %Lf\n", sum);
 }
 
+
+void SeriesC(long double precision, long double x) {
+    long double sum = 1.0, calculation;
+    unsigned long long threePowThree = 27, chThreePowThreeN = 1, chFact = 1, chFactPowThree = 1;
+    unsigned int n = 1, factZnThree = 1;
+    long double xPowTwo = x * x;
+    long double chX = 1.0;
+
+
+
+    do {
+        chThreePowThreeN *= threePowThree;
+        chFact *= n;
+        chFactPowThree *= (chFact * chFact);
+        chX *= xPowTwo;
+        factZnThree *= ((3 * n - 1) * (3 * n - 2) * (3 * n));
+        calculation = chThreePowThreeN *  factZnThree * chX / factZnThree;
+        sum += calculation;
+        ++n;
+        if (n == 7) {
+            printf("The series C does not converge\n");
+            return;
+        }
+    } while (calculation > precision);
+
+
+    printf("The sum of series B is %Lf\n", sum);
+
+}
+
+
+void SeriesD(long double precision, long double x) {
+    long double chX = 1.0;
+    long double xPowTwo = x * x;
+    unsigned int n = 1;
+    int chOne = 1;
+    unsigned long long factTwoNMinusOne = 1, factTwoN = 2;
+    long double sum = 0.0, calculation;
+
+    do {
+        chX *= xPowTwo;
+        chOne += -1;
+        factTwoNMinusOne *= (2 * n - 1);
+        factTwoN *= (2 * n);
+        calculation = chX * factTwoNMinusOne * chX / factTwoN;
+        sum += calculation;
+        ++n;
+        if (n == 15) {
+            printf("The series D does not converge\n");
+            return;
+        }
+    } while (calculation > precision);
+
+    printf("The sum of series D is %Lf\n", sum);
+}

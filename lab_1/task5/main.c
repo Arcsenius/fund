@@ -9,10 +9,8 @@ int main(const int argc, const char** argv) {
         SeriesA(precision, x);
         SeriesB(precision, x);
         SeriesC(precision, x);
+        SeriesD(precision, x);
     }
-
-
-
 
     return 0;
 }

@@ -5,5 +5,6 @@ set(CMAKE_C_STANDARD 23)
 
 add_subdirectory(lab_1/task3)
 add_subdirectory(lab_1/task5)
+add_subdirectory(lab_1/task6)
 
 

@@ -56,6 +56,24 @@ void PrintRootsQuadratic(int numRoots, double* root1, double* root2) {
 }
 
 
+int ArePermutationsEqual(double perm1[3], double perm2[3]) {
+    return perm1[0] == perm2[0] && perm1[1] == perm2[1] && perm1[2] == perm2[2];
+
+}
+
+
+int IsUnique(double uniqPermutation[6][3], int currentSize, double permutation[3]) {
+    for (int i = 0; i < currentSize; i++) {
+        if (ArePermutationsEqual(uniqPermutation[i], permutation)) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+
+
+
 int MultiplicityNums(int a, int b) {
     if (!(a * b)) {
         return -1;

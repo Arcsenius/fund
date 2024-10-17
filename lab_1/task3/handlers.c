@@ -17,35 +17,28 @@ int HandlerOptQ(const double* args) {
         return EXIT_FAILURE;
     }
 
-
-    printf("Coefficients %lf, %lf, %lf \n", a, b, c);
-    const int result1 = SolveQuadratic(precision, a, b, c, &root1, &root2);
-    PrintRootsQuadratic(result1, &root1, &root2);
-
-
-    printf("equation with coeff %lf, %lf, %lf \n", a, c, b);
-    const int result2 = SolveQuadratic(precision, a, c, b, &root1, &root2);
-    PrintRootsQuadratic(result2, &root1, &root2);
+    double permutation[6][3] = {{a, b, c}, {a, c, b}, {b, a, c}, {b, c, a}, {c, a, b}, {c, b, a}};
+    double uniqPermutation[6][3];
+    uniqPermutation[0][0] = a;
+    uniqPermutation[0][1] = b;
+    uniqPermutation[0][2] = c;
+    int k = 0;
 
 
-    printf("equation with coeff %lf, %lf, %lf \n", b, a, c);
-    const int result3 = SolveQuadratic(precision, b, a, c, &root1, &root2);
-    PrintRootsQuadratic(result3, &root1, &root2);
+    for (int i = 0; i < 6; i++) {
+        if(IsUnique(uniqPermutation, k, permutation[i])) {
+            uniqPermutation[k][0] = permutation[i][0];
+            uniqPermutation[k][1] = permutation[i][1];
+            uniqPermutation[k][2] = permutation[i][2];
+            ++k;
+        }
+    }
 
-
-    printf("equation with coeff %lf, %lf, %lf \n", b, c, a);
-    const int result4 = SolveQuadratic(precision, b, c, a, &root1, &root2);
-    PrintRootsQuadratic(result4, &root1, &root2);
-
-
-    printf("equation with coeff %lf, %lf, %lf \n", c, a, b);
-    const int result5 = SolveQuadratic(precision, c, a, b, &root1, &root2);
-    PrintRootsQuadratic(result5, &root1, &root2);
-
-
-    printf("equation with coeff %lf, %lf, %lf \n", c, b, a);
-    const int result6 = SolveQuadratic(precision, c, b, a, &root1, &root2);
-    PrintRootsQuadratic(result6, &root1, &root2);
+    for (int i = 0; i < k; ++i) {
+        printf("coefficients: %lf, %lf, %lf\n", uniqPermutation[i][0], uniqPermutation[i][1], uniqPermutation[i][2]);
+        int result = SolveQuadratic(precision, uniqPermutation[i][0], uniqPermutation[i][1], uniqPermutation[i][2], &root1, &root2);
+        PrintRootsQuadratic(result, &root1, &root2);
+    }
 
 
     return EXIT_SUCCESS;

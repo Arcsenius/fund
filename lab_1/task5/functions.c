@@ -39,7 +39,6 @@ int GetArgs(const int argc, const char ** argv, long double* precision,  long do
     }
 
 
-
 int CalcuiationSeries(long double precision, long double x, double (*f)(long double, int), int startN, double startValue, double* result) {
 
 

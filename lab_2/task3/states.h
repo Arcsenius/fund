@@ -1,8 +1,11 @@
-//
-// Created by Arseniy on 24.10.2024.
-//
 
 #ifndef STATES_H
 #define STATES_H
+
+typedef enum {
+    kS_OK,
+    kE_CANT_OPEN_FILE,
+    kE_BAD_ALLOCATION
+} kState;
 
 #endif //STATES_H

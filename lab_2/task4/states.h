@@ -1,8 +1,11 @@
-//
-// Created by Arseniy on 25.10.2024.
-//
-
 #ifndef STATES_H
 #define STATES_H
 
-#endif //STATES_H
+typedef enum {
+    kS_OK,
+    kE_INVALID_ARGUMENT,
+    kE_TYPE_OVERFLOW,
+    kE_BAD_ALLOCATION,
+} kState;
+
+#endif

@@ -16,3 +16,14 @@ add_subdirectory(lab_1/task10)
 
 
 
+add_subdirectory(lab_2/task1)
+add_subdirectory(lab_2/task2)
+add_subdirectory(lab_2/task3)
+add_subdirectory(lab_2/task4)
+add_subdirectory(lab_2/task7)
+add_subdirectory(lab_2/task8)
+
+
+
+
+

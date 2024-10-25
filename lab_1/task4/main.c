@@ -18,3 +18,5 @@ int main(int argc, char** args) {
 	destroyRequest(r);
 	return kS_OK;
 }
+//gcc main.c callbacks.c callbacks.h parseArgs.c parseArgs.h
+//./a.out -d ./input.txt

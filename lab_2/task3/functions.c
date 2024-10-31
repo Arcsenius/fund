@@ -4,7 +4,6 @@
 
 #include "states.h"
 #include <stdio.h>
-// #include "Vector.h"
 
 kState SearchSubstringsInFile(char* substring,char* path, Vector* lines, Vector* chars, Vector* fileIds, int fileId) {
     FILE* fd = fopen(path, "r");

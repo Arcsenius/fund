@@ -21,7 +21,7 @@ int main() {
         return code;
     }
 
-    code = FindEnterancesInFiles(lines, chars, fileIds, "zovzovzovzovzovsvosvosvosvo", 1, "./input_1.txt");
+    code = FindEnterancesInFiles(lines, chars, fileIds, "n\n\nn", 1, "./input_1.txt");
     if (code != kS_OK) {
         logErrors(code);
         return code;

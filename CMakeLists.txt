@@ -22,6 +22,11 @@ add_subdirectory(lab_2/task3)
 add_subdirectory(lab_2/task4)
 add_subdirectory(lab_2/task7)
 add_subdirectory(lab_2/task8)
+add_subdirectory(lab_3/test)
+
+
+add_subdirectory(lab_3/task1)
+add_subdirectory(lab_3/task2)
 
 
 

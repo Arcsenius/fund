@@ -12,7 +12,7 @@ int main() {
 
     // проверка возведения в степень
     double base = 2.0;
-    int power = 5;
+    int power = -3;
     double result2 = FastPower(base, power);
     printf("FastPower %f**%d = %f\n",base, power, result2);
 }

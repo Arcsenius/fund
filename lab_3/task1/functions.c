@@ -5,12 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// int DecimalToBaseR(int number, int r, char* result, kState* code){
-//
-//     unsigned int base = 1 << r;
-//     unsigned int mask =
-//
-// }
+
 
 
 unsigned int Increment(unsigned int number) {
@@ -45,9 +40,18 @@ char* DecimalToBaseR(int number, int r, kState* code) {
         *code = kE_INVALID_ARGUMENT;
         return NULL;
     }
+    int flag = 0;
+    if (number < 0) {
+        number = -number;
+        flag = 1;
+    } else if (number == 0) {
+        printf(" 0 \n");
+        *code = kS_OK;
+        return NULL;
+    }
     unsigned int base = 1 << r;
     unsigned int mask = Decrement(base);
-    char* result = (char*)malloc(65);
+    char* result = (char*)malloc(33);
 
 
     if (!result) {
@@ -58,7 +62,6 @@ char* DecimalToBaseR(int number, int r, kState* code) {
     int index = 0;
     while (number) {
         result[index] = symbols[number & mask];
-        // printf("%c", result[index]);
         number >>= r;
         index = Increment(index);
     }
@@ -75,7 +78,12 @@ char* DecimalToBaseR(int number, int r, kState* code) {
         left = Increment(left);
         right = Decrement(right);
     }
+    if (flag) {
+        printf("-");
+    }
+
     *code = kS_OK;
+
     return result;
 }
 

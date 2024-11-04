@@ -3,7 +3,7 @@
 
 int main() {
     kState code = kS_OK;
-    unsigned int number = 12;
+    int number = -5;
     unsigned int r = 1;
 
     char* result = DecimalToBaseR(number, r, &code);

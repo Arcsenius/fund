@@ -1,0 +1,17 @@
+
+#ifndef STATES_H
+#define STATES_H
+
+
+typedef enum {
+  kS_OK = 0,
+  kE_INVALID_NUMBER_ARGS,
+  kE_INVALID_FLAG,
+  kE_INVALID_MEMORY_ALLOCATION,
+  kE_PATH1_NOT_FOUND,
+  kE_PATH2_NOT_FOUND,
+  kE_FILE_IS_EMPTY
+} kState;
+
+
+#endif //STATES_H

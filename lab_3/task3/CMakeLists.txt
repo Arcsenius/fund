@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.22.1)
-project(fund_alg_task1 C)
+cmake_minimum_required(VERSION 3.29)
+project(fund_alg3_task3 C)
 
 set(CMAKE_C_STANDARD 23)
 

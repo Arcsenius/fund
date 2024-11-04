@@ -170,7 +170,7 @@ kState HandlerOptD( char* file1,  char* file2) {
 
     fclose(input);
 
-    qsort(employees, lines, sizeof(Employee), CompareEmployeesA);
+    qsort(employees, lines, sizeof(Employee), CompareEmployeesD);
 
     for (int k = 0; k < lines; ++k) {
         fprintf(output, "%d;%s;%s;%.2lf\n",employees[k].id, employees[k].lastName, employees[k].firstName, employees[k].salary );

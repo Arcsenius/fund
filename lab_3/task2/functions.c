@@ -20,7 +20,7 @@ kState FindLongestVectors(int size, unsigned int numVectors, ...) {
     for (int i = 0; i < numVectors; i++) {
         vectors[i] = va_arg(ap, Vector*);
     }
-    NormFunc* normArr = (NormFunc*)malloc(3 * sizeof(NormFunc));
+    NormFunc* normArr = (NormFunc*)malloc(FUNC_NUM * sizeof(NormFunc));
 
     if (normArr == NULL) {
         va_end(ap);
@@ -44,7 +44,13 @@ kState FindLongestVectors(int size, unsigned int numVectors, ...) {
     printf("Enter the matrix A %dx%d for norm number 3 \n", size, size);
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size; ++j) {
-            scanf("%lf", &matrix[i][j]);
+            if (scanf("%lf", &matrix[i][j]) != 1) {
+                va_end(ap);
+                free(matrix);
+                free(vectors);
+                free(normArr);
+                return kE_INVALID_MATRIX;
+            }
         }
     }
 
@@ -79,6 +85,8 @@ kState FindLongestVectors(int size, unsigned int numVectors, ...) {
         free(longestIndex);
 
     }
+    free(vectors);
+    free(normArr);
     va_end(ap);
     return kS_OK;
 }
@@ -97,7 +105,7 @@ double NormPowerP(const Vector *v, int n, int p, double** matrix) {
     for (int i = 0; i < n; ++i) {
         sum += pow(v->coords[i], p);
     }
-    return powl(sum, 1.0 / p);
+    return pow(sum, 1.0 / p);
 }
 
 double NormInf(const Vector *v, int n, int p, double** matrix) {

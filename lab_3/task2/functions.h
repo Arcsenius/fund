@@ -17,8 +17,10 @@ typedef struct {
 
 typedef enum  {
     kS_OK,
-    kE_ERROR_MEMORY_ALLOCATION
+    kE_ERROR_MEMORY_ALLOCATION,
+    kE_INVALID_MATRIX
 } kState;
+#define FUNC_NUM 3
 void PrintVector(Vector *v, int size);
 double NormPowerP(const Vector *v, int n, int p, double **);
 kState FindLongestVectors(int size, unsigned int numVectors, ...);

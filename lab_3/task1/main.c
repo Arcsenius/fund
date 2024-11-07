@@ -3,8 +3,8 @@
 
 int main() {
     kState code = kS_OK;
-    int number = -5;
-    unsigned int r = 1;
+    int number = 64;
+    unsigned int r = 4;
 
     char* result = DecimalToBaseR(number, r, &code);
 

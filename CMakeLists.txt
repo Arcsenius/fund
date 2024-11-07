@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.30.5)
+cmake_minimum_required(VERSION 3.29.6)
 project(fund_alg C)
 
 set(CMAKE_C_STANDARD 23)
@@ -28,7 +28,7 @@ add_subdirectory(lab_3/test)
 add_subdirectory(lab_3/task1)
 add_subdirectory(lab_3/task2)
 add_subdirectory(lab_3/task3)
-
+add_subdirectory(lab_3/task4)
 
 
 

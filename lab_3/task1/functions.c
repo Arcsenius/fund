@@ -69,7 +69,7 @@ char* DecimalToBaseR(int number, int r, kState* code) {
     result[index] = '\0';
 
     int left = 0, right = Decrement(index);
-    char tmp = "";
+    char tmp = '\0';
     while(left < right) {
 
         tmp = result[left];
